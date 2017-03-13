@@ -1,0 +1,237 @@
+[TOC]
+
+
+
+
+####  框架和新的知识、技术
+
+-  最重要的是理解MPV或者MPC，尽量全部使用MVP模式开发
+
+   > TODO-MVP
+
+-  网络请求框架
+   > Rxjava+Retrofit+OkHttp
+   > Retrofit资料：1.入门http://www.jianshu.com/p/1ef0ba0bccc6
+   >  		         2.进阶http://blog.csdn.net/lmj623565791/article/details/51304204
+   > Rxjava资料：http://gank.io/post/560e15be2dca930e00da1083
+   >
+   > RxJava和Retrofit有些难度，可以先不学
+
+-  图片加载框架
+   > glide/Freso(2-20想用Freso取代glide)
+   >
+   > PototView 双击图片可放大，可拖动
+
+-  数据库框架
+   > litepal
+
+-  Butterknife
+   > Butterknife
+
+-  Adapter
+   > BaseAdapter（HongYang开发的适用于简单情况的RecyclerView的万能Adapter）
+
+-  Fragment与Activity之间的通信等
+   > EventBus/otto/RxBus
+
+-  Android5.0后出来的Material Design
+   > 1.RecyclerView（基本使用）+cardView
+   >
+   > 2.可能SnackBar 代替Toast或简单的弹出框
+   >
+   > 3.TextInputLayout 较炫酷的输入框
+   >
+   > 4.SwipeLayout + RecyclerView  下拉刷新
+   >
+   > 5.AppBar的使用
+   > 6.ObservableScrollView  下拉刷新，下拉时顶部图片动画等（功能强大，但是学习成本很高，待定使用）
+   > 7.DrawerLayout+NavigationView  侧滑菜单，可能用不到
+   > 8.沉浸式或者叫状态栏透明
+   > 9.FloatingActionButton 
+   >
+   >  
+   >
+   > 有多个比较简单的MD风格的组件，在这边文章中都有怎么用：[点击这里](http://blog.csdn.net/eclipsexys/article/details/46349721)
+
+-  内存检测
+
+-  Activity滑动返回的实现（暂时只有想法）
+####  我认为的难点
+
+-     RecyclerView的使用
+      > 1.添加Header和不同的Item，就是资讯Fragment通用的Adapter（已解决线性布局）
+      > 2.上拉加载，下拉刷新（已解决）
+      > 3.item拖拽移动（已解决，抽取完善中）
+-     评论界面ListView中的楼中楼
+-     数据本地缓存
+-     视频播放（选做）
+-     消息推送
+-     分享
+-     OKHttp的Cookie管理（选做）
+-     WebView加载Html格式数据如何写（特别是WebView中的分页,可以留在最后完成）
+-     其他。。。
+#### 另,有时间看一看
+
+-  [Android酷炫实用的开源框架（UI框架）](http://blog.csdn.net/fancylovejava/article/details/45787729) 这里面的几个框架效果很炫，有兴趣可以集成到项目中
+
+
+
+
+##  规范（待完善中。。。）
+
+##### 编码规范
+
+- 1.多写文档注释，
+  - 每个方法（有父类或者接口的可以写在接口上）
+  - 重要的常量或者字段
+  - 较复杂的逻辑
+- 2.严格遵守命名规范（静态s，字段m，大小写，下划线）
+- 3.没有完成的地方要写上  // TODO，方便查漏补缺
+
+##### build.gradle配置
+
+
+
+	compileSdkVersion 25
+	buildToolsVersion "25.0.1"
+	minSdkVersion 15
+	targetSdkVersion 22
+
+
+	// material design
+	compile 'com.android.support:appcompat-v7:25.0.1'
+	compile 'com.android.support:design:25.0.1'
+	compile 'com.android.support:support-v4:25.0.1'
+	compile 'com.android.support:cardview-v7:25.0.1'
+	 // retrofit
+	compile 'com.squareup.retrofit2:retrofit:2.1.0'
+	compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+	compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+	// rx
+	compile 'io.reactivex:rxjava:1.2.1'
+	compile 'io.reactivex:rxandroid:1.2.1'
+	// okHttp
+	compile 'com.squareup.okhttp3:okhttp:3.5.0'
+	compile 'com.squareup.okio:okio:1.11.0'
+	// gson
+	compile 'com.google.code.gson:gson:2.7'
+	
+	// glide
+	compile 'com.github.bumptech.glide:glide:3.7.0'
+	compile 'com.jakewharton:butterknife:7.0.1'
+	
+	// butter knife
+	// apply plugin: 'com.neenbedankt.android-apt'
+	// classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+	compile 'com.jakewharton:butterknife:8.4.0'
+	apt 'com.jakewharton:butterknife-compiler:8.4.0'
+	
+	//PhotoView，用于图片详情界面，点击可放大，可拖动
+	compile 'com.github.chrisbanes.photoview:library:1.2.4'
+	//circle image
+	compile 'de.hdodenhof:circleimageview:2.1.0'
+
+​	
+
+
+
+## 日志
+
+#### 2-15
+
+- 已完成
+  - 资讯--多个Header和Footer以及多种item的RecyclerView
+  - 普通的item的点击跳转DetailActivity---主要是WebView的解析
+
+
+- 待完成：
+
+  - SplashActivity
+
+  - 图片详情界面
+
+  - WebView中视频播放（2-21解决）
+
+  - 资讯--关注待完善（2-18完成列表新闻展示）
+
+  - 资讯对应的其他item的展示(2-19完成)
+
+  - 资讯多图item对应的Activity
+
+  - 精选Fragment
+
+  - 社区
+
+  - 爱玩社区+凯恩之角的List
+
+  - 评论Activity
+
+
+- 重要：抽取BaseRecyclerAdapter（功能：多个Header和Footer，已完成）
+
+#### 2-17号2点
+
+- 框架完成了一半，资讯Fragment主要功能完成，新闻详情界面完成了三分之二
+
+
+#### 2-18上午
+
+- 框架完成了90%，
+  - 外层Fragment的基类
+  - 子Fragment的基类BaseFragment
+  - 下拉刷新，可选上拉加载更多的RefreshFragment
+  - 未完成，框架部分
+    - 刷新时头部图片可放大的Activity/Fragment的架构
+- 新增待完成
+  - **错误收集**
+  - **内存监控**
+  - 资讯--关注游戏专区的列表拖动
+  - 资讯--关注，某个专区对应的Activity(2-19完成主体，下拉放大待完成；2-20基本完成)
+  - 下载功能--图片和应用下载
+  - 清理缓存
+  - WebView中Html/JS的高级使用
+
+#### 2-19 
+
+- 关于缓存的处理的初步解决方案
+
+  ``` 
+  数据持久化
+  1.更改json字符串，只保留前20条就行了，也就是刷新数据的时候才会持久化
+  2.点击进入某个新闻列表之后，
+  	2.1在内存中维持一个docId集合，往里面添加新元素
+  	2.2本地添加一条数据，
+  3.在SplashActivity中读取本地数据，维护在内存中，只读取最近7天之内的数据
+  ```
+#### 2-20
+
+- 中午
+  - “为您推荐了XX条新内容”的提示消息实现思路
+    - 1.自定义pop
+    - 2.第三方插件  Alerter
+
+
+#### 3-9
+
+- 大部分功能完成
+
+- 没有完成的功能有：
+
+  - 登录
+  - 分享
+  - 跟贴、评论
+  - 关注某几个游戏类型/移动顺序
+  - 社区的论坛版块界面
+  - 社区详情界面（WebView）
+  - 版本更新
+  - “我”Fragment
+  - 设置
+
+    - 正文字号
+
+    - 表情包
+
+    - 仅仅WIFI下下载图片
+
+    - 关于
+  - 引导界面
