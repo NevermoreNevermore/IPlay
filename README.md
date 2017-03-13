@@ -20,7 +20,7 @@
 9. Android 抓包及逆向分析；
 10. 数据离线缓存；
 11. PhotoView；
-12. ​
+12. 简单的视频播放[JieCaoVideoPlayer](https://github.com/lipangit/JieCaoVideoPlayer)
 13. 使用Gradle多渠道打包及自定义编译的APK文件名；
 14. 夜间模式实践；
 15. 字体切换的实践；
