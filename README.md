@@ -3,7 +3,7 @@
 一个仿照网易爱玩的新闻阅读类的APP，是一款练习作品，使用的技术还很简单，还需要完善。
 
 #### 截屏
-![01]http://github.com/Dramadream/IPlay/raw/master/screenshort/01.png)
+![01](http://github.com/Dramadream/IPlay/raw/master/screenshort/01.png)
 ![02](http://github.com/Dramadream/IPlay/raw/master/screenshort/02.png)
 ![03](http://github.com/Dramadream/IPlay/raw/master/screenshort/03.png)
 ![04](http://github.com/Dramadream/IPlay/raw/master/screenshort/04.png)
