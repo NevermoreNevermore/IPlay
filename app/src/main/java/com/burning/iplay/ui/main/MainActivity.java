@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @BindView(R.id.rb_group)
     RadioGroup mRbGroup;
 
+
     private NewsFragment mNewsFragment;
     private JingXuanFragment mJingXuanFragment;
     private ForumFragment mForumFragment;
